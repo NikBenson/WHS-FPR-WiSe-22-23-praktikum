@@ -27,3 +27,22 @@ int i = 1316288537
 
 `l` ist größer als `Integer.MAX_VALUE`, weshalb nur die ersten bytes interpretiert werden.
 Dies führt im Gegensatz zum Abrunden des ersten Casts zu einem fatalen semantischen Fehler.
+
+## Aufgabe 2
+Verwiesen sei auf `de.whs.ni37900.fpr.praktikum.sheet1.aufgabe2.Aufgabe2` im Anhang, diese beinhaltet eine `static main(String[])`, die den Anforderungen der Aufgabe entspricht.
+
+## Aufgabe 3
+Verwiesen sei auf `de.whs.ni37900.fpr.praktikum.sheet1`.
+In den JavaDoc Kommentaren ist der Author ausgelassen, da dieser durch `git blame` in modernen Projekten überflüssig ist.
+
+## Aufgabe 4
+Erzeugen des Bytecodes:
+```bash
+javac -d out/ src/main/java/de/whs/ni37900/fpr/praktikum/sheet1/Main.java
+```
+
+Generieren der Dokumentation:
+```bash
+cd src/main/java
+javadoc -d ../../../docu/ de.whs.ni37900.fpr.praktikum.sheet1
+```
