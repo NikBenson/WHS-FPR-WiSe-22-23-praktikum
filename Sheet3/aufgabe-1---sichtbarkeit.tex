@@ -1,0 +1,24 @@
+Es gebe folgende Klassen:
+\begin{lstlisting}[label={lst:superclass-original}, caption={Superclass}, language=java]
+public class Superclass {
+    protected static void meineMethode() {
+        return;
+    }
+}
+\end{lstlisting}
+\begin{lstlisting}[label={lst:subclass-original}, caption={Subclass}, language=java]
+public class Subclass extends Superclass {
+    public static void main(String[] args) {
+        meineMethode();
+    }
+}
+\end{lstlisting}
+
+\begin{enumerate}
+    \item Warum ist meineMethode\(\) in \qq{Subclass} sichtbar?
+    \item Was können sie tun, um zu erreichen, dass diese Methode dort unsichtbar ist, ohne der Klasse oder der Methode einen anderen Zugriffsmodifikator zu geben?
+\end{enumerate}
+
+\paragraph{Der} implizite Zugriffsmodifikator, wenn nicht manuell angegeben, ist \qq{package}.
+Das heißt, dass diem Methode nur im selben package sichtbar ist.
+Wollen wir nun verhindern, dass meineMethode\(\) sichtbar ist, so lagern wir eine der beiden Klassen in ein anderes Package aus.
