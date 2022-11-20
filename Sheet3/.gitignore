@@ -267,7 +267,7 @@ TSWLatexianTemp*
 # LyX
 *.lyx~
 
-# Kile
+# Kile\times
 *.backup
 
 # gummi

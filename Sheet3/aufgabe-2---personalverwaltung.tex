@@ -1,0 +1,41 @@
+Es soll ein einfaches System zur Verwaltung von Mitarbeitern einer Firma programmiert werden.
+Die Firma besitzt \qq{normale} Mitarbeiter und Manager.
+Normale Mitarbeiter besitzen mindestens die Eigenschaften
+\begin{itemize}
+    \item Name, Gehalt, Einstellungsdatum, Personal-ID sowie
+    \item eine Methode, mit der man das Gehalt um x Prozent erhöhen kann.
+\end{itemize}
+Manager erhalten zusätzlich zum normalen Gehalt einen Bonus für besondere Leistungen, der willkürlich einem Manager zugewiesen werden kann.
+Alle Klassen sind zu kapseln.
+Die Klassen Angestellter/Manager sollen in einem zu erstellenden Paket personal liegen.
+Die Personalverwaltung verwendet die Klassen dieses Pakets, um Mitarbeiter anzulegen / zu entfernen, das Gehalt zu erhöhen und auszulesen.
+Die Mitarbeiter sollen in einem Array gespeichert werden, dessen Werte in einer Schleife ausgelesen werden können.
+Die Verwaltung soll prüfen können, ob Mitarbeiter/Manager doppelt im System vorhanden sind (doppelt = alle Eigenschaften identisch).
+Für die Ausgabe der Personen soll eine Methode toString entwickelt werden.
+Des weiteren soll es möglich sein, die Person mit dem höchsten und die mit dem niedrigsten Gehalt mit entsprechenden Methoden zu finden.
+Verwenden Sie bei der Implementierung eine (oder mehrere) abstrakte Klasse(n) und ein generisches Array!
+Erstellen Sie aus dem Paket personal ein Java-Archiv (JAR), dito für die Klasse für die Personalverwaltung.
+Wie können Sie nun an der Kommandozeile Ihr Programm aufrufen?
+
+\paragraph{Verwiesen} sei auf \qq{de.whs.ni37900.fpr.praktikum.sheet1.aufgabe2.Aufgabe2} im Anhang, diese beinhaltet eine \qq{static main(String[])}, die den Anforderungen an den Code der Aufgabe entspricht.
+
+Um das Programm in separate .jar Dateien pro Package zu erstellen muss zunächst das Programm mittels des javac Befehls kompiliert werden.
+\begin{lstlisting}[label={lst:compile-class-files}, caption={Comilieren der .java Dateien zu .class Dateien}]
+javac -d out/ -classpath src/main/java/ src/main/java/de/whs/ni37900/fpr/praktikum/sheet3/aufgabe2/Main.java
+\end{lstlisting}
+Anschließend können die .class Dateien, mittels des jar Befehls, in .jar Archive komprimiert werden.
+\begin{lstlisting}[label={lst:package-personal}, caption={Erstellen des Java Archives personal.jar}]
+cd out/
+jar -cf personal.jar de/whs/ni37900/fpr/praktikum/sheet3/aufgabe2/personal/*.class
+\end{lstlisting}
+\begin{lstlisting}[label={lst:compile-package-personalverwaltung}, caption={Erstellen des Java Archieves personalverwaltung.jar}]
+cd out/
+jar -cfe personalverwaltung.jar de.whs.ni37900.fpr.praktikum.sheet3.aufgabe2.Main de/whs/ni37900/fpr/praktikum/sheet3/aufgabe2/*.class
+\end{lstlisting}
+Zum Ausführen kann der java Befehl mit der Option cp mehrere Archive (oder kompilate) vereinen.
+Bei diesem Vorgehen kann der Einstiegspunkt nicht aus den Metadaten der Archive extrahiert werden, da potenziell mehrere angegeben seien können.
+Deshalb muss dieser manuell angegeben werden.
+\begin{lstlisting}[label={lst:compile-run-personalverwaltung}, caption={Starten der Personalverwaltung}]
+cd out/
+java -cp personal.jar:personalverwaltung.jar de.whs.ni37900.fpr.praktikum.sheet3.aufgabe2.Main
+\end{lstlisting}
