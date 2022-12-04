@@ -1,62 +1,17 @@
 package de.whs.ni37900.fpr.praktikum.sheet3.aufgabe2.personal;
 
 import java.util.Date;
-import java.util.Objects;
 import java.util.UUID;
 
-public class Mitarbeiter {
-    protected final UUID personalId;
-    protected final String name;
-    protected final Date einstellungsdatum;
+public interface Mitarbeiter {
 
-    protected double gehalt;
+    UUID getPersonalId();
 
-    public Mitarbeiter(String name, Date einstellungsdatum, double gehalt) {
-        this.personalId = UUID.randomUUID();
-        this.name = name;
-        this.einstellungsdatum = einstellungsdatum;
-        this.gehalt = gehalt;
-    }
+    String getName();
 
-    public UUID getPersonalId() {
-        return personalId;
-    }
+    Date getEinstellungsdatum();
 
-    public String getName() {
-        return name;
-    }
+    double getGehalt();
 
-    public Date getEinstellungsdatum() {
-        return einstellungsdatum;
-    }
-
-    public double getGehalt() {
-        return gehalt;
-    }
-
-    public double gehaltAnpassen(double prozent) {
-        return gehalt *= prozent;
-    }
-
-    @Override
-    public String toString() {
-        return "Mitarbeiter{" +
-                "personalId=" + personalId +
-                ", name='" + name + '\'' +
-                ", einstellungsdatum=" + einstellungsdatum +
-                ", gehalt=" + gehalt +
-                '}';
-    }
-
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (!(o instanceof Mitarbeiter that)) return false;
-        return Double.compare(that.getGehalt(), getGehalt()) == 0 && getPersonalId().equals(that.getPersonalId()) && getName().equals(that.getName()) && getEinstellungsdatum().equals(that.getEinstellungsdatum());
-    }
-
-    @Override
-    public int hashCode() {
-        return Objects.hash(getPersonalId(), getName(), getEinstellungsdatum(), getGehalt());
-    }
+    double gehaltAnpassen(double prozent);
 }

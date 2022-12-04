@@ -1,7 +1,7 @@
 package de.whs.ni37900.fpr.praktikum.sheet3.aufgabe2;
 
-import de.whs.ni37900.fpr.praktikum.sheet3.aufgabe2.personal.Manager;
-import de.whs.ni37900.fpr.praktikum.sheet3.aufgabe2.personal.Mitarbeiter;
+import de.whs.ni37900.fpr.praktikum.sheet3.aufgabe2.personal.ManagerImpl;
+import de.whs.ni37900.fpr.praktikum.sheet3.aufgabe2.personal.MitarbeiterImpl;
 
 import java.sql.Date;
 import java.time.Instant;
@@ -10,11 +10,11 @@ public class Main {
     public static void main(String[] args) {
         MitarbeiterPersonalverwaltung personalverwaltung = new MitarbeiterPersonalverwaltung();
 
-        personalverwaltung.einstellen(new Manager("Test1", Date.from(Instant.now()), 100, 0));
-        personalverwaltung.einstellen(new Manager("Test2", Date.from(Instant.now()), 75, 0));
-        personalverwaltung.einstellen(new Mitarbeiter("Test3", Date.from(Instant.now()), 50));
-        personalverwaltung.einstellen(new Mitarbeiter("Test4", Date.from(Instant.now()), 25));
-        personalverwaltung.einstellen(new Mitarbeiter("Test5", Date.from(Instant.now()), 25));
+        personalverwaltung.einstellen(new ManagerImpl("Test1", Date.from(Instant.now()), 100, 0));
+        personalverwaltung.einstellen(new ManagerImpl("Test2", Date.from(Instant.now()), 75, 0));
+        personalverwaltung.einstellen(new MitarbeiterImpl("Test3", Date.from(Instant.now()), 50));
+        personalverwaltung.einstellen(new MitarbeiterImpl("Test4", Date.from(Instant.now()), 25));
+        personalverwaltung.einstellen(new MitarbeiterImpl("Test5", Date.from(Instant.now()), 25));
 
         System.out.printf("min %s%n", personalverwaltung.schlechtestesGehalt().toString());
         System.out.printf("max %s%n", personalverwaltung.bestesGehalt().toString());

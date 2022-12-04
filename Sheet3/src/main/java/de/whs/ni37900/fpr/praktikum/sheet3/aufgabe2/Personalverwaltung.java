@@ -8,8 +8,8 @@ import java.util.Comparator;
 import java.util.Random;
 
 public abstract class Personalverwaltung<T extends Mitarbeiter> {
-    Random random = new Random();
-    private T[] personal;
+    private final Random random = new Random();
+    protected T[] personal;
 
     protected Personalverwaltung() {
         personal = empty();
@@ -63,11 +63,11 @@ public abstract class Personalverwaltung<T extends Mitarbeiter> {
         return manager;
     }
 
-    T bestesGehalt() {
+    public T bestesGehalt() {
         return Arrays.stream(personal).max(Comparator.comparingDouble(T::getGehalt)).orElse(null);
     }
 
-    T schlechtestesGehalt() {
+    public T schlechtestesGehalt() {
         return Arrays.stream(personal).min(Comparator.comparingDouble(T::getGehalt)).orElse(null);
     }
 
@@ -84,7 +84,7 @@ public abstract class Personalverwaltung<T extends Mitarbeiter> {
         return anzahl;
     }
 
-    void personalListeAusgeben() {
+    public void personalListeAusgeben() {
         for (final T mitarbeiter : personal) {
             System.out.println(mitarbeiter.toString());
         }

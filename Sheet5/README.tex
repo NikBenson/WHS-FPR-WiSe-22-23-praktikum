@@ -1,0 +1,74 @@
+\documentclass[12pt]{article}
+
+\usepackage{amsmath}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[ngerman]{babel}
+\usepackage[ngerman=ngerman-x-latest]{hyphsubst}
+\usepackage{csquotes}
+\usepackage{hyphenat}
+\usepackage{textcmds}
+
+\usepackage{listings}
+\renewcommand{\lstlistingname}{Code}
+\renewcommand{\lstlistlistingname}{Codeverzeichnis}
+
+\usepackage{hyperref}
+\hypersetup{
+    colorlinks=true,
+    linkcolor=black,
+    filecolor=blue,
+    urlcolor=blue,
+    pdftitle={Samplesort},
+    pdfauthor={Nik Benson},
+    pdfpagemode=FullScreen,
+}
+\urlstyle{same}
+
+\usepackage{xcolor}
+\definecolor{codegreen}{rgb}{0,0.6,0}
+\definecolor{codegray}{rgb}{0.5,0.5,0.5}
+\definecolor{codepurple}{rgb}{0.58,0,0.82}
+\definecolor{backcolour}{rgb}{0.95,0.95,0.92}
+
+\lstdefinestyle{c}{
+    backgroundcolor=\color{backcolour},
+    commentstyle=\color{codegreen},
+    keywordstyle=\color{magenta},
+    numberstyle=\tiny\color{codegray},
+    stringstyle=\color{codepurple},
+    basicstyle=\ttfamily\footnotesize,
+    breakatwhitespace=false,
+    breaklines=true,
+    captionpos=b,
+    keepspaces=true,
+    numbers=left,
+    numbersep=5pt,
+    showspaces=false,
+    showstringspaces=false,
+    showtabs=false,
+    tabsize=2
+}
+
+\lstset{style=c}
+
+\author{Nik Benson}
+\title{FPR Praktikum 5}
+
+\begin{document}
+    \maketitle
+    \pagenumbering{Roman}
+    \addcontentsline{toc}{section}{Inhaltsverzeichnis}
+    \tableofcontents
+    \newpage
+    \pagenumbering{arabic}
+
+
+    \section{Aufgabe 1 - Sortierung}\label{sec:aufgabe-1---sortierung}
+    \input{aufgabe-1---sortierung}
+
+
+    \section{Aufgabe 2 - Interfaces}\label{sec:aufgabe-2---interfaces}
+    \input{aufgabe-2---interfaces1}
+
+\end{document}
